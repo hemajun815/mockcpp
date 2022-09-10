@@ -22,16 +22,13 @@
 MOCKCPP_NS_START
 
 ///////////////////////////////////////////////////////////
-ApiHookKey::ApiHookKey(const void* api, ApiHookHolder* holder)
-   : apiAddress(api)
-   , hookHolder(holder)
+ApiHookKey::ApiHookKey(const void* api, ApiHookHolder* holder) : hookHolder(holder), apiAddress(api)
 {
    hook = new ApiHook(api, holder->getApiHook());
 }
 
 ///////////////////////////////////////////////////////////
-ApiHookKey::ApiHookKey(const void* api)
-   : apiAddress(api), hook(0), hookHolder(0)
+ApiHookKey::ApiHookKey(const void* api) : hook(0), hookHolder(0), apiAddress(api)
 {
 }
 
